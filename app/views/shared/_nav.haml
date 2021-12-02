@@ -1,0 +1,18 @@
+%nav.navbar.navbar-expand.bg-light
+  %p.d-inline-block.align-top= image_tag 'img.png', size: "30x30"
+  %p= link_to 'Witcher DB', "#", class: "navbar-brand"
+
+  %div.collapse.navbar-collapse{id: "navbarSupportedContent"}
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %p= link_to "Witchers", "#", class: "nav-link"
+      %li.nav-item.active
+        %p= link_to "Schools", "#", class: "nav-link"
+      %li.nav-item.active
+        %p= link_to "Swords", "#", class: "nav-link"
+      %li.nav-item
+        %p= link_to "Random kitten picture", "#", class: "nav-link"
+      %li.nav-item
+        %p= link_to "put bad mark", "#", class: "nav-link disabled"
+      %li.nav-item
+        %p= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link"
