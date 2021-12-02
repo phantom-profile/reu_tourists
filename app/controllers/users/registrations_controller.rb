@@ -4,10 +4,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
 
   def create
-    create_params = configure_sign_up_params
-    create_params[:is_elder] = true if create_params.delete(:secret) == ENV['SECRET']
+    create_params = sign_up_params
+    create_params[:is_elder] = true if params[:secret] == ENV['SECRET']
 
-    debugger
     build_resource(create_params)
 
     resource.save
@@ -31,7 +30,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :nickname, :email, :password, :password_confirmation, :secret])
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :nickname, :email, :password, :password_confirmation, :secret) }
+    devise_parameter_sanitizer.permit(:secret)
   end
 
 end

@@ -12,8 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def is_elder?
-    return true if @current_user.is_elder
-
-    false
+    head :forbidden unless current_user.is_elder?
   end
 end
