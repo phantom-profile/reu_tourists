@@ -21,16 +21,16 @@ ActiveRecord::Schema.define(version: 2021_12_02_133433) do
   end
 
   create_table "sword_types", force: :cascade do |t|
-    t.string "type", null: false
+    t.string "material", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["type"], name: "index_sword_types_on_type", unique: true
+    t.index ["material"], name: "index_sword_types_on_material", unique: true
   end
 
   create_table "swords", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "min_damage"
-    t.integer "max_damage"
+    t.integer "min_damage", null: false
+    t.integer "max_damage", null: false
     t.integer "sword_type_id"
     t.integer "witcher_id"
     t.datetime "created_at", precision: 6, null: false

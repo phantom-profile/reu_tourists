@@ -3,5 +3,5 @@ class SwordType < ApplicationRecord
 
   has_many :swords
 
-  validates :type, presence: true, inclusion: TYPES
+  validates :material, presence: true, inclusion: TYPES
 end
