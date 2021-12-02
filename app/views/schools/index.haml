@@ -1,0 +1,14 @@
+%h2.display-5 Schools
+
+.add-school-errors
+
+%div.container-md
+  %h4 Create School
+  = render 'form'
+
+%table.table.table-striped.table-info.table-hover.schools-table
+  %th Name
+  %th Location
+  %th Members
+  %th Actions
+  = render @schools

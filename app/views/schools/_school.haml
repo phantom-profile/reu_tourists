@@ -1,0 +1,6 @@
+%tr[school]
+  %td= school.name
+  %td= school.location
+  %td= school.witchers.size
+  %td
+    = link_to "Destroy", school_path(school), method: :delete, remote: true, data: { confirm: "Are you sure?" }

@@ -1,0 +1,9 @@
+<% if @school.valid? %>
+  $('.add-school-errors').html('')
+  $('.schools-table').append('<%=j render partial: 'school', locals: { school: @school }%>')
+  $('.form-control').each(function(index) {
+    this.value = ""
+  })
+<% else %>
+  $('.add-school-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @school.errors }%>')
+<%end%>
