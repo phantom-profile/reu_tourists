@@ -1,0 +1,9 @@
+<% if @sword.valid? %>
+  $('.add-swords-errors').html('')
+  $('.swords-table').append('<%=j render partial: 'sword', locals: { sword: @sword }%>')
+  $('.form-control').each(function(index) {
+      this.value = ""
+  })
+<% else %>
+  $('.add-swords-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @sword.errors }%>')
+<%end%>

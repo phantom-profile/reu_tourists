@@ -1,0 +1,7 @@
+%tr[sword]
+  %td= sword.name
+  %td= sword.sword_type.material
+  %td= sword.witcher&.name || 'Has no owner'
+  %td= "#{sword.min_damage}-#{sword.max_damage}"
+  %td
+    = link_to "Destroy", sword_path(sword), method: :delete, remote: true, data: { confirm: "Are you sure?" }

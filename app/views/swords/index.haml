@@ -1,0 +1,15 @@
+%h2.display-5 Swords
+
+.add-swords-errors
+
+%div.container-md
+  %h4 Create Sword
+  = render 'form'
+
+%table.table.table-striped.table-info.table-hover.swords-table
+  %th Name
+  %th Type
+  %th Owner
+  %th Damage
+  %th Actions
+  = render @swords
