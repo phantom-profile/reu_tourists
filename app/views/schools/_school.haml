@@ -2,5 +2,7 @@
   %td= school.name
   %td= school.location
   %td= school.witchers.size
-  %td
-    = link_to "Destroy", school_path(school), method: :delete, remote: true, data: { confirm: "Are you sure?" }
+  - for_elder_only do
+    %td
+      = link_to "Edit", edit_school_path(school), remote: true
+      = link_to "Destroy", school_path(school), method: :delete, remote: true, data: { confirm: "Are you sure?" }

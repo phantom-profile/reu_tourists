@@ -2,13 +2,15 @@
 
 .add-school-errors
 
-%div.container-md
-  %h4 Create School
-  = render 'form'
+- for_elder_only do
+  %div.container-md.school-form
+    %h4 Create School
+    = render 'form'
 
 %table.table.table-striped.table-info.table-hover.schools-table
   %th Name
   %th Location
   %th Members
-  %th Actions
+  - for_elder_only do
+    %th Actions
   = render @schools
