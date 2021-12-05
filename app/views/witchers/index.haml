@@ -1,0 +1,18 @@
+%h2.display-5 Witchers
+
+.add-witchers-errors
+
+- for_elder_only do
+  %div.container-md
+    %h4 Add Witcher
+    = render 'form'
+
+%table.table.table-striped.table-info.table-hover.witchers-table
+  %th Name
+  %th Nickname
+  %th Age
+  %th Currently located
+  %th School
+  %th Sword
+  %th Actions
+  = render @witchers

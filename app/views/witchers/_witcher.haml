@@ -1,0 +1,9 @@
+%tr[witcher]
+  %td= witcher.name
+  %td= witcher.nickname
+  %td= witcher.age
+  %td= witcher.location
+  %td= witcher.school.name
+  %td= "#{witcher.sword.name} - #{witcher.sword.sword_type.material}"
+  %td
+    = link_to "Destroy", witcher_path(witcher), method: :delete, remote: true, data: { confirm: "Are you sure?" }
