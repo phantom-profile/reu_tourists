@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :is_elder?
 
@@ -7,5 +9,6 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    @user.destroy
   end
 end

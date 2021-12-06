@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Witcher < ApplicationRecord
   belongs_to :school
 

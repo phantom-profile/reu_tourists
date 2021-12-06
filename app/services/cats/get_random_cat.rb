@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rest-client'
 
 module Cats
@@ -5,9 +7,8 @@ module Cats
     CAT_API_TOKEN = ENV['CAT_API_TOKEN']
 
     def self.meow
-      @response = RestClient.get 'https://api.thecatapi.com/v1/images/search', params: {api_key: CAT_API_TOKEN}
-      @image = JSON.parse( @response.body)[0]['url']
+      @response = RestClient.get 'https://api.thecatapi.com/v1/images/search', params: { api_key: CAT_API_TOKEN }
+      @image = JSON.parse(@response.body)[0]['url']
     end
   end
 end
-

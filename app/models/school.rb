@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class School < ApplicationRecord
   has_many :witchers, foreign_key: :school_id, dependent: :nullify
 

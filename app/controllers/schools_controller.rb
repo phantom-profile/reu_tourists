@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class SchoolsController < ApplicationController
   before_action :is_elder?, except: :index
-  before_action :school, only: [:edit, :update, :destroy]
+  before_action :school, only: %i[edit update destroy]
 
   def initialize
     super
