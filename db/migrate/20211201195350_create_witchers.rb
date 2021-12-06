@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateWitchers < ActiveRecord::Migration[6.1]
   def change
     create_table :witchers do |t|
@@ -10,6 +12,6 @@ class CreateWitchers < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index :witchers, [:name, :nickname], unique: true
+    add_index :witchers, %i[name nickname], unique: true
   end
 end

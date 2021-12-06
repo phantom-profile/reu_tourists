@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateSwordTypes < ActiveRecord::Migration[6.1]
   def change
     create_table :sword_types do |t|
