@@ -1,5 +1,5 @@
 class WitchersController < ApplicationController
-  before_action :is_elder?, only: [:create, :destroy]
+  before_action :is_elder?, except: :index
   before_action :witcher, only: [:edit, :update, :destroy]
 
   def initialize

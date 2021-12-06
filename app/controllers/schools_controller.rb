@@ -1,5 +1,5 @@
 class SchoolsController < ApplicationController
-  before_action :is_elder?, only: [:create, :destroy]
+  before_action :is_elder?, except: :index
   before_action :school, only: [:edit, :update, :destroy]
 
   def initialize
