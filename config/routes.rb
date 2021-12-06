@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'users/registrations'}
 
-  resources :schools
-  resources :swords
-  resources :witchers
+  resources :schools, except: :show
+  resources :swords, except: :show
+  resources :witchers, except: :show
+  resources :users
 
   get :random_cat, controller: 'cats'
 end

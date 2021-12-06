@@ -14,5 +14,9 @@
         %p= link_to "Random cat picture", random_cat_path, class: "nav-link"
       %li.nav-item
         %p= link_to "put bad mark", "#", class: "nav-link disabled"
+      - for_elder_only do
+        %li.nav-item
+          %p= link_to "Users", users_path, class: "nav-link"
       %li.nav-item
         %p= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link"
+
