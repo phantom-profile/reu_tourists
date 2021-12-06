@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_02_133433) do
+ActiveRecord::Schema.define(version: 2021_12_06_110908) do
 
   create_table "schools", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2021_12_02_133433) do
     t.string "name", null: false
     t.string "nickname"
     t.boolean "is_elder", default: false, null: false
+    t.integer "viewed_pages", default: 0, null: false
+    t.integer "edited_resources", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
