@@ -3,9 +3,7 @@
 .add-swords-errors
 
 - for_elder_only do
-  %div.container-md
-    %h4 Create Sword
-    = render 'form'
+  = render partial: 'form', locals: {sword: @new_sword, action: 'Create'}
 
 %table.table.table-striped.table-info.table-hover.swords-table
   %th Name
