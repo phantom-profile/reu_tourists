@@ -3,9 +3,7 @@
 .add-school-errors
 
 - for_elder_only do
-  %div.container-md.school-form
-    %h4 Create School
-    = render 'form'
+  = render partial: 'form', locals: {school: @new_school, action: 'Create' }
 
 %table.table.table-striped.table-info.table-hover.schools-table
   %th Name

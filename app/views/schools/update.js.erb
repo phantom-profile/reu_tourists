@@ -1,0 +1,10 @@
+<% if @school.valid? %>
+  $('.add-school-errors').html('')
+  $('#school_<%=@school.id%>')[0].innerHTML = '<%=j render partial: 'school', locals: { school: @school }%>'
+  $('.form-control').each(function(index) {
+      this.value = ""
+  })
+  $('.school-form')[0].innerHTML = '<%=j render partial: 'form', locals: { school: @new_school, action: 'Create' }%>'
+<% else %>
+  $('.add-school-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @school.errors }%>')
+<%end%>
