@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class WitchersController < ApplicationController
   before_action :is_elder?, except: :index
-  before_action :witcher, only: [:edit, :update, :destroy]
+  before_action :witcher, only: %i[edit update destroy]
 
   def initialize
     super
@@ -8,7 +10,7 @@ class WitchersController < ApplicationController
   end
 
   def index
-    @witchers = Witcher.all
+    @witchers = Witcher.all.preload(:sword, :school)
   end
 
   def create
