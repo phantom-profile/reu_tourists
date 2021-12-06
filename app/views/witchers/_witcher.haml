@@ -7,4 +7,5 @@
   %td= "#{witcher.sword.name} - #{witcher.sword.sword_type.material}"
   - for_elder_only do
     %td
+      = link_to "Edit", edit_witcher_path(witcher), remote: true
       = link_to "Destroy", witcher_path(witcher), method: :delete, remote: true, data: { confirm: "Are you sure?" }

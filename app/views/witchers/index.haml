@@ -3,9 +3,7 @@
 .add-witchers-errors
 
 - for_elder_only do
-  %div.container-md
-    %h4 Add Witcher
-    = render 'form'
+  = render partial: 'form', locals: {witcher: @new_witcher, action: 'Create'}
 
 %table.table.table-striped.table-info.table-hover.witchers-table
   %th Name

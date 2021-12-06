@@ -1,0 +1,10 @@
+<% if @witcher.valid? %>
+  $('.add-witchers-errors').html('')
+  $('#witcher_<%=@witcher.id%>')[0].innerHTML = '<%=j render partial: 'witcher', locals: { witcher: @witcher }%>'
+  $('.form-control').each(function(index) {
+      this.value = ""
+  })
+  $('.witcher-form')[0].innerHTML = '<%=j render partial: 'form', locals: {witcher: @new_witcher, action: 'Create'}%>'
+<% else %>
+  $('.add-witchers-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @witcher.errors }%>')
+<%end%>
