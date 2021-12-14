@@ -31,7 +31,7 @@ class WitchersController < ApplicationController
 
   def witcher_params
     cleaned_params = params.require(:witcher).permit(:name, :nickname, :age, :sword, :location, :school_id)
-    cleaned_params[:sword] = Sword.find(cleaned_params[:sword])
+    cleaned_params[:sword] = Sword.find_by(id: cleaned_params[:sword])
     cleaned_params
   end
 
