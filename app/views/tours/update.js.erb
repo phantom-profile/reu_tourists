@@ -1,0 +1,10 @@
+<% if @tour.valid? %>
+  $('.add-tours-errors').html('')
+  $('#tour_<%=@tour.id%>')[0].innerHTML = '<%=j render partial: 'tour', locals: { tour: @tour }%>'
+  $('.form-control').each(function(index) {
+      this.value = ""
+  })
+  $('.tour-form')[0].innerHTML = '<%=j render partial: 'form', locals: {tour: @new_tour, action: 'Create'}%>'
+<% else %>
+  $('.add-tours-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @tour.errors }%>')
+<%end%>

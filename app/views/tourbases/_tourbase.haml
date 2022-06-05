@@ -1,0 +1,10 @@
+%tr[tourbase]
+  %td= tourbase.name
+  %td= tourbase.region.nearest_city
+  %td= tourbase.current_capacity
+  %td= tourbase.tours.size
+  %td= render partial: 'weather', locals: { weather: Weather::GetCurrentWeather.new(tourbase).call }
+  - for_elder_only do
+    %td
+      = link_to "Edit", edit_tourbasis_path(tourbase), remote: true
+      = link_to "Destroy", tourbasis_path(tourbase), method: :delete, remote: true, data: { confirm: "Are you sure?" }

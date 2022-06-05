@@ -1,20 +1,18 @@
 %nav.navbar.navbar-expand.bg-light
-  %p.d-inline-block.align-top= image_tag 'img.png', size: "30x30"
-  %p= link_to 'Witcher DB', root_path, class: "navbar-brand"
+  %p.d-inline-block.align-top= image_tag 'img_1.png', size: "30x30"
+  %p= link_to 'Tourbases DB', root_path, class: "navbar-brand"
 
   %div.collapse.navbar-collapse{id: "navbarSupportedContent"}
     %ul.navbar-nav.mr-auto
       %li.nav-item.active
-        %p= link_to "Witchers", witchers_path, class: "nav-link"
+        %p= link_to "My tourbase", my_tourbase_path, class: "nav-link"
       %li.nav-item.active
-        %p= link_to "Schools", schools_path, class: "nav-link"
-      %li.nav-item.active
-        %p= link_to "Swords", swords_path, class: "nav-link"
-      %li.nav-item
-        %p= link_to "Random cat picture", random_cat_path, class: "nav-link"
-      %li.nav-item
-        %p= link_to "put bad mark", "#", class: "nav-link disabled"
+        %p= link_to "Regions", regions_path, class: "nav-link"
       - for_elder_only do
+        %li.nav-item.active
+          %p= link_to "Tourbases", tourbases_path, class: "nav-link"
+        %li.nav-item
+          %p= link_to "Tourists", tourists_path, class: "nav-link"
         %li.nav-item
           %p= link_to "Users", users_path, class: "nav-link"
       %li.nav-item

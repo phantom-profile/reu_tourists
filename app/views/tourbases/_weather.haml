@@ -1,0 +1,4 @@
+%div.weather-icon
+  %div
+    ="#{weather[:temp]} °C, #{weather[:wind_speed]} m/sec"
+    %img{src: "http://openweathermap.org/img/w/#{weather[:icon]}.png"}

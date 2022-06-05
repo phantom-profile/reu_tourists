@@ -1,0 +1,10 @@
+<% if @tourbase.valid? %>
+  $('.add-tourbase-errors').html('')
+  $('#tourbase_<%=@tourbase.id%>')[0].innerHTML = '<%=j render partial: 'tourbase', locals: { tourbase: @tourbase }%>'
+  $('.form-control').each(function(index) {
+      this.value = ""
+  })
+  $('.tourbase-form')[0].innerHTML = '<%=j render partial: 'form', locals: { tourbase: @new_tourbase, action: 'Create' }%>'
+<% else %>
+  $('.add-tourbase-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @tourbase.errors }%>')
+<%end%>

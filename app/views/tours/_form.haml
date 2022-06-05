@@ -1,0 +1,17 @@
+%div.container-md.tour-form
+  %h4= "#{action} Tour"
+  = form_for tour, remote: true do |f|
+    %div.row
+      %div.mb-3.col
+        = f.label :tour_duration_days, class: 'form-label'
+        = f.number_field :tour_duration_days, class: "form-control", id: "replyNumber", min: "3", step: "1", "data-bind": "value:replyNumber"
+      %div.mb-3.col
+        = f.label :tour_starts, class: 'form-label'
+        = f.date_field :tour_starts, class: 'form-control'
+    %div.row
+      %div.mb-3.col
+        = f.label :tourist, class: 'form-label'
+        = f.select :tourist_id, Tourist.where(tour_id: nil).collect { |t| ["#{t.email} - #{t.firstname} #{t.lastname}", t.id] }, {}, class: 'form-select'
+        = f.hidden_field :tourbase_id, value: current_user.tourbase.id
+      %div.mb-3
+        = f.submit action, class: "btn btn-primary"

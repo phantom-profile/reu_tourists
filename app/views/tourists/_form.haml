@@ -1,0 +1,20 @@
+%div.container-md.tourist-form
+  %h4= "Add Tourist"
+  = form_for tourist, remote: true do |f|
+    %div.row
+      %div.mb-3.col
+        = f.label :firstname, class: 'form-label'
+        = f.text_field :firstname, class: 'form-control'
+      %div.mb-3.col
+        = f.label :lastname, class: 'form-label'
+        = f.text_field :lastname, class: 'form-control'
+    %div.row
+      %div.mb-3.col
+        = f.label :age, class: 'form-label'
+        = f.number_field :age, class: "form-control", id: "replyNumber", min: "14", step: "1", "data-bind": "value:replyNumber"
+      %div.mb-3.col
+        = f.label :email, class: 'form-label'
+        = f.text_field :email, class: 'form-control'
+    %div.row
+      %div.mb-3
+        = f.submit action, class: "btn btn-primary"

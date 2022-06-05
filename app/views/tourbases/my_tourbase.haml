@@ -1,0 +1,15 @@
+%h2.display-5= "Tourists on my tourbase #{@tourbase.name} in #{@tourbase.region.nearest_city}"
+%h3= render partial: 'weather', locals: {weather: Weather::GetCurrentWeather.new(@tourbase).call}
+.add-tours-errors
+
+= render partial: 'tours/form', locals: {tour: @new_tour, action: 'Create'}
+
+%table.table.table-striped.table-info.table-hover.tours-table
+  %th Firstname
+  %th Lastname
+  %th Age
+  %th Email
+  %th Tour started
+  %th Tour finishes
+  %th Actions
+  = render @tourbase.tours

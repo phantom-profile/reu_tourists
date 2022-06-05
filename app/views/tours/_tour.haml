@@ -1,0 +1,10 @@
+%tr[tour]
+  %td= tour.tourist.firstname
+  %td= tour.tourist.lastname
+  %td= tour.tourist.age
+  %td= tour.tourist.email
+  %td= tour.tour_starts
+  %td= tour.tour_finishes
+
+  %td
+    = link_to "Finished and accepted", tour_path(tour), method: :delete, remote: true, data: { confirm: "All tour finishing operations completed?" }

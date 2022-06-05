@@ -1,0 +1,9 @@
+<% if @tourist.valid? %>
+  $('.add-tourists-errors').html('')
+  $('.tourists-table').append('<%=j render partial: 'tourist', locals: { tourist: @tourist }%>')
+  $('.form-control').each(function(index) {
+      this.value = ""
+  })
+<% else %>
+  $('.add-tourists-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @tourist.errors }%>')
+<%end%>

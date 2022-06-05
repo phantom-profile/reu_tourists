@@ -1,0 +1,17 @@
+%h2.display-5 Tourists
+
+.add-tourists-errors
+
+- for_elder_only do
+  = render partial: 'form', locals: {tourist: @new_tourist, action: 'Create'}
+
+%table.table.table-striped.table-info.table-hover.tourists-table
+  %th Firstname
+  %th Lastname
+  %th Age
+  %th Email
+  %th Currently on tour
+
+  - for_elder_only do
+    %th Actions
+  = render @tourists

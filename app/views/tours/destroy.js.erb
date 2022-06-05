@@ -1,0 +1,6 @@
+$('#tour_<%=@tour.id%>').remove();
+
+var newLi = document.createElement('option')
+newLi.setAttribute('value', '<%= @tour.tourist.id %>')
+newLi.text = '<%= @tour.tourist.email %> - <%= @tour.tourist.firstname + ' ' + @tour.tourist.lastname %>'
+$("#tour_tourist_id")[0].appendChild(newLi)

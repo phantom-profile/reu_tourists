@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  root 'witchers#index'
+  root 'tourbases#my_tourbase'
 
   devise_for :users, controllers: { registrations: 'users/registrations'}
 
-  resources :schools, except: :show
-  resources :swords, except: :show
-  resources :witchers, except: :show
+  resources :tourbases
+  resources :regions
+  resources :tourists
   resources :users
+  resources :tours
 
   get :random_cat, controller: 'cats'
+  get :my_tourbase, controller: 'tourbases'
 end

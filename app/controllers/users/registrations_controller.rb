@@ -5,7 +5,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     create_params = sign_up_params
-    create_params[:is_elder] = true if params[:secret] == ENV['SECRET']
+    create_params[:is_admin] = true if create_params[:token_id].start_with?('ad')
+    create_params[:tourbase_id] = Tourbase.last.id
 
     build_resource(create_params)
 
@@ -30,8 +31,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :nickname, :email, :password, :password_confirmation, :secret) }
-    devise_parameter_sanitizer.permit(:secret)
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:firstname, :lastname, :email, :password, :password_confirmation, :token_id) }
+    devise_parameter_sanitizer.permit(:token_id)
   end
 
 end

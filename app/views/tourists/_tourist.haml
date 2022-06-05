@@ -1,0 +1,10 @@
+%tr[tourist]
+  %td= tourist.firstname
+  %td= tourist.lastname
+  %td= tourist.age
+  %td= tourist.email
+  %td= tourist.tour.nil? ? 'No' : 'Yes'
+  - for_elder_only do
+    %td
+      = link_to "Edit", edit_tourist_path(tourist), remote: true
+      = link_to "Destroy", tourist_path(tourist), method: :delete, remote: true, data: { confirm: "Are you sure?" }

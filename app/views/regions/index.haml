@@ -1,0 +1,14 @@
+%h2.display-5 Regions
+
+.add-regions-errors
+
+- for_elder_only do
+  = render partial: 'form', locals: {region: @new_region, action: 'Create'}
+
+%table.table.table-striped.table-info.table-hover.regions-table
+  %th Nearest city
+  %th Country
+  %th Country code
+  - for_elder_only do
+    %th Actions
+  = render @regions

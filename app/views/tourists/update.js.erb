@@ -1,0 +1,10 @@
+<% if @tourist.valid? %>
+  $('.add-tourists-errors').html('')
+  $('#tourist_<%=@tourist.id%>')[0].innerHTML = '<%=j render partial: 'tourist', locals: { tourist: @tourist }%>'
+  $('.form-control').each(function(index) {
+      this.value = ""
+  })
+  $('.tourist-form')[0].innerHTML = '<%=j render partial: 'form', locals: {tourist: @new_tourist, action: 'Create'}%>'
+<% else %>
+  $('.add-tourists-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @tourist.errors }%>')
+<%end%>

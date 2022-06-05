@@ -1,0 +1,9 @@
+<% if @tourbase.valid? %>
+  $('.add-school-errors').html('')
+  $('.tourbases-table').append('<%=j render partial: 'tourbase', locals: { tourbase: @tourbase }%>')
+  $('.form-control').each(function(index) {
+    this.value = ""
+  })
+<% else %>
+  $('.add-tourbase-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @tourbase.errors }%>')
+<%end%>

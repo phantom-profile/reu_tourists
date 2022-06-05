@@ -1,0 +1,10 @@
+<% if @region.valid? %>
+  $('.add-regions-errors').html('')
+  $('#region_<%=@region.id%>')[0].innerHTML = '<%=j render partial: 'region', locals: { region: @region }%>'
+  $('.form-control').each(function(index) {
+      this.value = ""
+  })
+  $('.region-form')[0].innerHTML = '<%=j render partial: 'form', locals: {region: @new_region, action: 'Create'}%>'
+<% else %>
+  $('.add-regions-errors').html('<%=j render partial: 'shared/errors_list', locals: { errors: @region.errors }%>')
+<%end%>

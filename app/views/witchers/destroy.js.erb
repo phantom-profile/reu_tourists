@@ -1,6 +1,0 @@
-$('#witcher_<%=@witcher.id%>').remove();
-
-var newLi = document.createElement('option')
-newLi.setAttribute('value', '<%= @witcher.sword.id %>')
-newLi.text = '<%= @witcher.sword.name %> - <%= @witcher.sword.sword_type.material %>'
-$("#witcher_sword")[0].appendChild(newLi)

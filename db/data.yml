@@ -1,0 +1,252 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2022-02-28 19:23:07.856558'
+    - '2022-02-28 19:23:07.856558'
+
+---
+regions:
+  columns:
+  - id
+  - nearest_city
+  - country
+  - country_code
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Krasnodar
+    - Russia
+    - RU
+    - '2022-03-12 12:51:53.475657'
+    - '2022-03-12 14:15:48.785020'
+  - - 2
+    - Moscow
+    - Russia
+    - RU
+    - '2022-03-12 14:19:27.095782'
+    - '2022-03-12 14:19:27.095782'
+  - - 3
+    - Novosibirsk
+    - Russia
+    - RU
+    - '2022-03-12 14:19:42.220310'
+    - '2022-03-12 14:19:42.220310'
+  - - 4
+    - Rostov
+    - Russia
+    - RU
+    - '2022-03-14 11:42:05.105246'
+    - '2022-03-14 12:37:09.571917'
+
+---
+tourbases:
+  columns:
+  - id
+  - name
+  - max_capacity
+  - current_capacity
+  - lat
+  - lon
+  - region_id
+  - created_at
+  - updated_at
+  records: 
+  - - 5
+    - First one
+    - 166
+    - 165
+    - 45.0352566
+    - 38.9764814
+    - 1
+    - '2022-03-12 13:23:24.243597'
+    - '2022-03-15 19:15:40.573126'
+  - - 6
+    - Second one
+    - 231
+    - 231
+    - 45.0352566
+    - 38.9764814
+    - 1
+    - '2022-03-12 13:23:34.530630'
+    - '2022-03-14 13:30:36.539231'
+  - - 7
+    - Third one
+    - 200
+    - 2
+    - 45.0352566
+    - 38.9764814
+    - 1
+    - '2022-03-12 13:23:45.967327'
+    - '2022-03-14 11:15:11.397537'
+  - - 10
+    - Fourth one
+    - 100
+    - 100
+    - 55.7504461
+    - 37.6174943
+    - 2
+    - '2022-03-14 13:31:16.710033'
+    - '2022-03-14 13:31:16.890581'
+
+---
+tourists:
+  columns:
+  - id
+  - firstname
+  - lastname
+  - email
+  - age
+  - created_at
+  - updated_at
+  - tour_id
+  records: 
+  - - 1
+    - Ti
+    - Urist
+    - ti@r.ru
+    - 441
+    - '2022-03-12 14:02:44.639057'
+    - '2022-03-15 19:45:02.381843'
+    - 2
+  - - 2
+    - Li
+    - Rum
+    - rum@r.ru
+    - 33
+    - '2022-03-12 14:02:59.514816'
+    - '2022-03-15 19:12:59.787529'
+    - 1
+  - - 3
+    - Al
+    - Won
+    - won@r.ru
+    - 33
+    - '2022-03-12 14:03:15.788529'
+    - '2022-03-15 19:44:49.076038'
+    - 
+  - - 4
+    - sdf
+    - sdfdsf
+    - q@w.c
+    - 14
+    - '2022-03-15 19:25:49.758957'
+    - '2022-03-15 19:25:49.758957'
+    - 
+
+---
+tours:
+  columns:
+  - id
+  - tour_duration_days
+  - tour_starts
+  - tour_finishes
+  - tourist_id
+  - created_at
+  - updated_at
+  - tourbase_id
+  records: 
+  - - 1
+    - 5
+    - '2022-03-16 00:00:00'
+    - '2022-03-21 00:00:00'
+    - 2
+    - '2022-03-15 19:12:59.768645'
+    - '2022-03-15 19:12:59.768645'
+    - 5
+  - - 2
+    - 77
+    - '2022-03-24 00:00:00'
+    - '2022-06-09 00:00:00'
+    - 1
+    - '2022-03-15 19:45:02.346084'
+    - '2022-03-15 19:45:02.346084'
+    - 10
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - created_at
+  - updated_at
+  - firstname
+  - lastname
+  - is_admin
+  - token_id
+  - served_tourists
+  - edited_resources
+  - tourbase_id
+  records: 
+  - - 1
+    - a@a.a
+    - "$2a$12$CJMhTeeaZVwqvcANU4fwkem8YnioAHhY61VIeLxwnD.acPG1PCZYi"
+    - 
+    - 
+    - 
+    - '2022-03-12 13:07:23.499878'
+    - '2022-03-12 13:57:35.441866'
+    - Joe
+    - Woe
+    - true
+    - 1
+    - 0
+    - 0
+    - 5
+  - - 2
+    - b@b.b
+    - "$2a$12$9BFYbfhdgLMUO8gM5KSGNO64GpQe3MsmWz372NQou/AG3G6q5VL2y"
+    - 
+    - 
+    - 
+    - '2022-03-12 13:59:51.876808'
+    - '2022-03-12 14:39:35.610647'
+    - Name
+    - Lastname
+    - true
+    - 1
+    - 0
+    - 0
+    - 5
+  - - 3
+    - c@c.c
+    - "$2a$12$wLDvLLKZ7KlqyMhJ5FkAwe33doaXh.B/.fNcN6htv922ELnTUBbuy"
+    - 
+    - 
+    - 
+    - '2022-03-12 14:00:06.989597'
+    - '2022-03-12 14:00:06.989597'
+    - Name
+    - Lastname
+    - false
+    - 1
+    - 0
+    - 0
+    - 5
+  - - 4
+    - email_1@witcher.com
+    - "$2a$12$zWCARM2jDWVS2ap1J3kPHOVbkb3U2YwIZvEbyNDBsmQgKV7imC/dm"
+    - 
+    - 
+    - 
+    - '2022-03-15 19:42:21.257888'
+    - '2022-03-15 19:42:21.257888'
+    - Just
+    - User
+    - false
+    - 0
+    - 0
+    - 0
+    - 10

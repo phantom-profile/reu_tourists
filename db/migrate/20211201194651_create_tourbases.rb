@@ -6,6 +6,8 @@ class CreateTourbases < ActiveRecord::Migration[6.1]
       t.string :name, null: false
       t.integer :max_capacity, null: false
       t.integer :current_capacity, null: false
+      t.float :lat
+      t.float :lon
       t.belongs_to :region
 
       t.timestamps

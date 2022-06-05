@@ -1,0 +1,18 @@
+%h2.display-5 Tourbases
+
+.add-tourbase-errors
+
+- for_elder_only do
+  = render partial: 'form', locals: {tourbase: @new_tourbase, action: 'Create' }
+
+%table.table.table-striped.table-info.table-hover.tourbases-table
+  %th Name
+  %th Region
+  %th Current capacity
+  %th Members
+  %th Current weather
+  - for_elder_only do
+    %th Actions
+  = render @tourbases
+
+
